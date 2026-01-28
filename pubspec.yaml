@@ -61,7 +61,7 @@ dev_dependencies:
 flutter_icons:
   android: true
   ios: false
-  image_path: "web/Doula_adminfavicon.png"
+  image_path: "web/icons/Doula_admin-192.png"
 
 
 # The following section is specific to Flutter packages.

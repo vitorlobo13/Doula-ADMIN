@@ -1,11 +1,11 @@
 {
-    "name": "Doula Admin",
-    "short_name": "Doula Admin",
+    "name": "Nascer+",
+    "short_name": "Nascer+",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "Um aplicativo para facilitar o dia a dia das doulas.",
+    "description": "Um aplicativo para facilitar o dia a dia dos profissionais da obstetrícia.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

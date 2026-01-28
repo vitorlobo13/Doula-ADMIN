@@ -15,16 +15,22 @@ jobs:
           
       - name: Fix Project and Dependencies
         run: |
-          # 1. Protege nossa pasta 'lib'
+          # 1. Protege nossa pasta 'lib' e o pubspec.yaml
           mv lib lib_backup
+          mv pubspec.yaml pubspec_backup.yaml
+          
           # 2. Reconstrói a estrutura nativa
           flutter create . --overwrite --platforms=android
-          # 3. Restaura nossa 'lib'
+          
+          # 3. Restaura nossa 'lib' e o pubspec.yaml original
           rm -rf lib
           mv lib_backup lib
-          # 4. Reinstala TODAS as bibliotecas necessárias
-          flutter pub add intl shared_preferences url_launcher image_picker
-
+          rm pubspec.yaml # Remove o pubspec.yaml gerado pelo flutter create
+          mv pubspec_backup.yaml pubspec.yaml # Restaura o pubspec.yaml com as suas dependências
+          
+          # 4. Reinstala TODAS as bibliotecas necessárias e obtém o flutter_launcher_icons
+          flutter pub get
+          
       - name: Generate App Icons
         run: |
           # Este comando executa o pacote e substitui os ícones nativos

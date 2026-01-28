@@ -13,20 +13,18 @@ jobs:
           flutter-version: '3.19.0'
           channel: 'stable'
           
-      - name: Fix Project Structure
+      - name: Fix Project and Dependencies
         run: |
-          # 1. Movemos nossa pasta 'lib' para um lugar seguro temporariamente
+          # 1. Protege nossa pasta 'lib'
           mv lib lib_backup
-          # 2. Reconstruímos as pastas nativas
+          # 2. Reconstrói a estrutura nativa
           flutter create . --overwrite --platforms=android
-          # 3. Apagamos a 'lib' padrão que o Flutter criou
+          # 3. Restaura nossa 'lib'
           rm -rf lib
-          # 4. Trazemos nossa 'lib' original de volta
           mv lib_backup lib
+          # 4. Reinstala TODAS as bibliotecas necessárias
+          flutter pub add intl shared_preferences url_launcher image_picker
           
-      - name: Install dependencies
-        run: flutter pub get
-        
       - name: Build APK
         run: flutter build apk --release
         

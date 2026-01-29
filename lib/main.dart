@@ -54,8 +54,10 @@ class _MainNavigationState extends State<MainNavigation> {
             .map((item) => Gestante.fromJson(item))
             .toList();
       });
+      // O setState acima já avisa o Flutter para redesenhar as abas com os novos dados!
     }
   }
+
 
   Future<void> _salvarDados(List<Gestante> gestantes) async {
     final prefs = await SharedPreferences.getInstance();

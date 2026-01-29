@@ -7,17 +7,17 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
 
 void main() {
-  runApp(const DoulaApp());
+  runApp(const NascerMais());
 }
 
-class DoulaApp extends StatelessWidget {
-  const DoulaApp({super.key});
+class NascerMais extends StatelessWidget {
+  const NascerMais({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Doula Admin',
+      title: 'Nascer+',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.pink),
         useMaterial3: true,

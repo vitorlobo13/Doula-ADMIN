@@ -39,7 +39,6 @@ jobs:
       - name: Fix Android Manifest for Display Name
         run: |
           # 6. Altera o nome de exibição do app no AndroidManifest.xml
-          # Isso garante que o nome seja "Doula Admin" e não "doula_admin"
           # O nome de exibição é definido no strings.xml, mas o flutter create pode ter gerado um AndroidManifest.xml que aponta para um nome genérico.
           # A forma mais segura é garantir que o strings.xml tenha o nome correto.
           
@@ -47,7 +46,7 @@ jobs:
           mkdir -p android/app/src/main/res/values
           echo '<?xml version="1.0" encoding="utf-8"?>' > android/app/src/main/res/values/strings.xml
           echo '<resources>' >> android/app/src/main/res/values/strings.xml
-          echo '    <string name="app_name">Doula Admin</string>' >> android/app/src/main/res/values/strings.xml
+          echo '    <string name="app_name">Nascer+</string>' >> android/app/src/main/res/values/strings.xml
           echo '</resources>' >> android/app/src/main/res/values/strings.xml
           
           # Garante que o AndroidManifest.xml aponte para o app_name

@@ -31,10 +31,11 @@
 
   <title>Nascer+</title>
 
-  <script>
-    // The value below is injected by flutter build, do not touch.
-    var serviceWorkerVersion = null;
+   <script>
+    {{flutter_build_config}}
+    {{flutter_service_worker_loader}}
   </script>
+  <script src="flutter_bootstrap.js" async></script>
 </head>
 <body>
 </body>

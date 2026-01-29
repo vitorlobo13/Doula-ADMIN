@@ -47,6 +47,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final listaParaExibir = _buscaController.text.isEmpty ? widget.gestantes : listaFiltrada;    
     return Scaffold(
       appBar: AppBar(
         title: const Text('Minhas Gestantes'),
@@ -183,3 +184,4 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
+

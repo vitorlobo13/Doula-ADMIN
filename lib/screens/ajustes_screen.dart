@@ -81,7 +81,7 @@ class AjustesScreen extends StatelessWidget {
             padding: EdgeInsets.all(16.0),
             child: Text('GUIA RÁPIDO', style: TextStyle(fontWeight: FontWeight.bold, color: Colors.grey)),
           ),
-          _buildGuiaItem(Icons.people, 'Gestantes', 'Cadastre suas clientes e use os cartões para registrar acompanhamentos. e informações do pré-natal. Dentro do cartão você pode registrar subtópicos, por exemplo, registrar medicamentos.'),
+          _buildGuiaItem(Icons.people, 'Gestantes', 'Cadastre suas clientes e use os cartões para registrar acompanhamentos e informações do pré-natal. Dentro do cartão você pode registrar subtópicos, por exemplo, registrar medicamentos.'),
           _buildGuiaItem(Icons.attach_money, 'Financeiro', 'Defina o valor do contrato e registre cada pagamento recebido para ter controle total.'),
           _buildGuiaItem(Icons.search, 'Busca', 'Use a barra de busca no topo para encontrar rapidamente qualquer gestante pelo nome.'),
           _buildGuiaItem(Icons.delete_sweep, 'Excluir', 'Arraste uma ficha para a esquerda na lista principal para excluí-la permanentemente.'),
@@ -121,6 +121,7 @@ class AjustesScreen extends StatelessWidget {
     );
   }
 }
+
 
 
 

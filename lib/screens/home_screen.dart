@@ -22,13 +22,15 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  late List<Gestante> listaGestantes;
-  late List<Gestante> listaFiltrada;
+  // Declarando as listas como variáveis da classe
+  List<Gestante> listaGestantes = [];
+  List<Gestante> listaFiltrada = [];
   final _buscaController = TextEditingController();
 
   @override
   void initState() {
     super.initState();
+    // Inicializa com o que estiver disponível no momento
     listaGestantes = widget.gestantes;
     listaFiltrada = listaGestantes;
   }
@@ -47,7 +49,13 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final listaParaExibir = _buscaController.text.isEmpty ? widget.gestantes : listaFiltrada;    
+    // Sincroniza a lista local com os dados carregados do banco (main.dart)
+    if (listaGestantes.isEmpty && widget.gestantes.isNotEmpty) {
+      listaGestantes = widget.gestantes;
+      if (_buscaController.text.isEmpty) {
+        listaFiltrada = listaGestantes;
+      }
+    }  
     return Scaffold(
       appBar: AppBar(
         title: const Text('Minhas Gestantes'),
@@ -184,4 +192,5 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
+
 

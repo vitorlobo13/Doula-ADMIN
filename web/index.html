@@ -32,12 +32,26 @@
   <title>Nascer+</title>
   <link rel="manifest" href="manifest.json">
 
-   <script>
-    {{flutter_build_config}}
-    {{flutter_service_worker_loader}}
+  <script>
+    // Esse script ajuda a carregar o Flutter corretamente
+    var serviceWorkerVersion = null;
   </script>
-  <script src="flutter_bootstrap.js" async></script>
+  <script src="flutter.js" defer></script>
 </head>
 <body>
+  <script>
+    window.addEventListener('load', function(ev ) {
+      _flutter.loader.loadEntrypoint({
+        serviceWorker: {
+          serviceWorkerVersion: serviceWorkerVersion,
+        },
+        onEntrypointLoaded: function(engineInitializer) {
+          engineInitializer.initializeEngine().then(function(appRunner) {
+            appRunner.runApp();
+          });
+        }
+      });
+    });
+  </script>
 </body>
 </html>

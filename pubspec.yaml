@@ -58,7 +58,7 @@ dev_dependencies:
 # following page: https://dart.dev/tools/pub/pubspec
 
 
-flutter_icons:
+flutter_launcher_icons:
   android: true
   ios: false
   image_path: "web/Nascermaisicon.PNG"

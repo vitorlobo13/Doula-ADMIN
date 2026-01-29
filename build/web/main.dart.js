@@ -562,7 +562,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     },
     get C13() {
       return C[13] = dart.const({
-        __proto__: main.DoulaApp.prototype,
+        __proto__: main.NascerMais.prototype,
         [Widget_key]: null
       });
     },
@@ -1448,7 +1448,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
         [Text_strutStyle]: null,
         [Text_style]: C[95] || CT.C95,
         [Text_textSpan]: null,
-        [Text_data]: "Doula Admin Beta"
+        [Text_data]: "Nascer+ Beta"
       });
     },
     get C97() {
@@ -1819,7 +1819,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
         [Text_strutStyle]: null,
         [Text_style]: C[124] || CT.C124,
         [Text_textSpan]: null,
-        [Text_data]: "Desenvolvido com ❤️ para Doulas"
+        [Text_data]: "Desenvolvido com ❤️ para quem vive o nascer"
       });
     },
     get C122() {
@@ -4046,27 +4046,27 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     });
   };
   var Widget_key = dart.privateName(framework, "Widget.key");
-  main.DoulaApp = class DoulaApp extends framework.StatelessWidget {
+  main.NascerMais = class NascerMais extends framework.StatelessWidget {
     static ['_#new#tearOff'](opts) {
       let key = opts && 'key' in opts ? opts.key : null;
-      return new main.DoulaApp.new({key: key});
+      return new main.NascerMais.new({key: key});
     }
     build(context) {
-      return new app.MaterialApp.new({debugShowCheckedModeBanner: false, title: "Doula Admin", theme: theme_data.ThemeData.new({colorScheme: color_scheme.ColorScheme.fromSeed({seedColor: colors.Colors.pink}), useMaterial3: true}), home: C[1] || CT.C1});
+      return new app.MaterialApp.new({debugShowCheckedModeBanner: false, title: "Nascer+", theme: theme_data.ThemeData.new({colorScheme: color_scheme.ColorScheme.fromSeed({seedColor: colors.Colors.pink}), useMaterial3: true}), home: C[1] || CT.C1});
     }
   };
-  (main.DoulaApp.new = function(opts) {
+  (main.NascerMais.new = function(opts) {
     let key = opts && 'key' in opts ? opts.key : null;
-    main.DoulaApp.__proto__.new.call(this, {key: key});
+    main.NascerMais.__proto__.new.call(this, {key: key});
     ;
-  }).prototype = main.DoulaApp.prototype;
-  dart.addTypeTests(main.DoulaApp);
-  dart.addTypeCaches(main.DoulaApp);
-  dart.setMethodSignature(main.DoulaApp, () => ({
-    __proto__: dart.getMethods(main.DoulaApp.__proto__),
+  }).prototype = main.NascerMais.prototype;
+  dart.addTypeTests(main.NascerMais);
+  dart.addTypeCaches(main.NascerMais);
+  dart.setMethodSignature(main.NascerMais, () => ({
+    __proto__: dart.getMethods(main.NascerMais.__proto__),
     build: dart.fnType(framework.Widget, [framework.BuildContext])
   }));
-  dart.setLibraryUri(main.DoulaApp, I[0]);
+  dart.setLibraryUri(main.NascerMais, I[0]);
   main.MainNavigation = class MainNavigation extends framework.StatefulWidget {
     static ['_#new#tearOff'](opts) {
       let key = opts && 'key' in opts ? opts.key : null;
@@ -4491,7 +4491,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     }
     [_enviarFeedback]() {
       return async.async(dart.void, function* _enviarFeedback() {
-        let emailLaunchUri = core._Uri.new({scheme: "mailto", path: "vitorlobo10@gmail.com", queryParameters: new (T.IdentityMapOfString$dynamic()).from(["subject", "Feedback App Doula - Versão Beta", "body", "Olá! Gostaria de sugerir o seguinte para o aplicativo..."])});
+        let emailLaunchUri = core._Uri.new({scheme: "mailto", path: "vitorlobo10@gmail.com", queryParameters: new (T.IdentityMapOfString$dynamic()).from(["subject", "Feedback App Nascer+ - Versão Beta", "body", "Olá! Gostaria de sugerir o seguinte para o aplicativo..."])});
         try {
           if (yield url_launcher_uri.canLaunchUrl(emailLaunchUri)) {
             yield url_launcher_uri.launchUrl(emailLaunchUri);

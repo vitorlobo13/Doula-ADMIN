@@ -20,6 +20,35 @@ class _DetalhesGestanteScreenState extends State<DetalhesGestanteScreen> {
       appBar: AppBar(
         title: Text(widget.gestante.nome),
         backgroundColor: Colors.pink.shade100,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.edit),
+            onPressed: () async {
+              final gestanteAtualizada = await Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => EditarGestanteScreen(gestante: widget.gestante),
+                ),
+              );
+              if (gestanteAtualizada != null) {
+                setState(() {
+                  // Atualiza a gestante localmente com os dados editados
+                  // Como o objeto Gestante é passado por referência e modificado,
+                  // e o onSave da HomeScreen lida com a lista completa,
+                  // basta atualizar o objeto e o setState irá reconstruir a tela.
+                  // A HomeScreen irá persistir a lista atualizada ao retornar.
+                  widget.gestante.nome = gestanteAtualizada.nome;
+                  widget.gestante.dppFinal = gestanteAtualizada.dppFinal;
+                  widget.gestante.maternidade = gestanteAtualizada.maternidade;
+                  widget.gestante.classificacaoRisco = gestanteAtualizada.classificacaoRisco;
+                  widget.gestante.fotoPath = gestanteAtualizada.fotoPath;
+                  // Outros campos como ficha, valorContrato, pagamentos, contratoEntregue
+                  // são mantidos, pois a tela de edição não os altera diretamente.
+                });
+              }
+            },
+          ),
+        ],
       ),
       body: Column(
         children: [
@@ -194,3 +223,4 @@ class _DetalhesGestanteScreenState extends State<DetalhesGestanteScreen> {
     );
   }
 }
+
